@@ -53,11 +53,13 @@ switch(command){
 
 function showTweets(){
   //Display last 20 Tweets
-  var screenName = {screen_name: 'nodejs'};
+  var screenName = {screen_name: 'stefanieding'};
   client.get('statuses/user_timeline', screenName, function(error, tweets, response){
     if(!error){
       for(var i = 0; i<tweets.length; i++){
-        console.log(tweets[i].text);
+        var date = tweets[i].created_at;
+        console.log("@StefanieDing: " + tweets[i].text + " Created At: " + date.substring(0, 19));
+        console.log("");
       }
     }else{
       console.log('Error occurred');
