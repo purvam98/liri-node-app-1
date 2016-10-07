@@ -6,22 +6,33 @@ var spotify = require('spotify');
 var client = new twitter(keys.twitterKeys);
 var fs = require('fs');
 
+//Stored argument's array
+var nodeArgv = process.argv;
 var command = process.argv[2];
-var x = process.argv[3];
+//movie or song
+var x = "";
+//attaches multiple word arguments
+for (var i=3; i<nodeArgv.length; i++){
+  if(i>3 && i<nodeArgv.length){
+    x = x + "+" + nodeArgv[i];
+  } else{
+    x = x + nodeArgv[i];
+  }
+}
 
 //switch case
 switch(command){
   case "my-tweets":
     showTweets();
-    break;
+  break;
 
   case "spotify-this-song":
     if(x){
       spotifySong(x);
     } else{
-      spotifySong("The Sign");
+      spotifySong("Fluorescent Adolescent");
     }
-    break;
+  break;
 
   case "movie-this":
     if(x){
@@ -29,39 +40,46 @@ switch(command){
     } else{
       omdbData("Mr. Nobody")
     }
-    break;
+  break;
 
   case "do-what-it-says":
     doThing();
-    break;
+  break;
 
   default:
     console.log("{Please enter a command: my-tweets, spotify-this-song, movie-this, do-what-it-says}");
-    break;
+  break;
 }
 
 function showTweets(){
   //Display last 20 Tweets
-  var screenName = {screen_name: 'StefanieDing'};
-  client.get('statuses/urser_timeline', screenName, function(err, data){
-    console.log(data);
-    // data.forEach(function(item) {console.log(item.text, "(created on", item.created_at, ")")})
-  })
-
+  var screenName = {screen_name: 'nodejs'};
+  client.get('statuses/user_timeline', screenName, function(error, tweets, response){
+    if(!error){
+      for(var i = 0; i<tweets.length; i++){
+        console.log(tweets[i].text);
+      }
+    }else{
+      console.log('Error occurred');
+    }
+  });
 }
 
 function spotifySong(song){
-  spotify.search({ type:'track', query: song}, function(error, data){
-    console.log(data);
-
-    // for(var i = 0; i<data.tracks.items.length; i++){
-    //   var songData = data.tracks.items[i];
-
-    //   console.log(songData.artists[0],name);
-    //   console.log(songData.artist.name);
-    //   console.log(songData.preview_url);
-    //   console.log(songData.album.name);
-    //}
+  spotify.search({ type: 'track', query: song}, function(error, data){
+    if(!error){
+        var songData = data.tracks.items[0];
+        //artist
+        console.log(songData.artists[0].name);
+        //song name
+        console.log(songData.name);
+        //spotify preview link
+        console.log(songData.preview_url);
+        //album name
+        console.log(songData.album.name);
+    } else{
+      console.log('Error occurred.');
+    }
   });
 }
 
@@ -81,6 +99,13 @@ function omdbData(movie){
       console.log("Actors: " + body.Actors);
       console.log("Rotten Tomatoes Rating: " + body.tomatoRating);
       console.log("Rotten Tomatoes URL: " + body.tomatoURL);
+    } else{
+      console.log('Error occurred.')
+    }
+    if(movie === "Mr. Nobody"){
+      console.log("------------");
+      console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
+      console.log("It's on Netflix!");
     }
   });
 
