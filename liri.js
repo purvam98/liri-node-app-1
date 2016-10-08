@@ -77,13 +77,13 @@ function spotifySong(song){
       for(var i = 0; i < data.tracks.items.length; i++){
         var songData = data.tracks.items[i];
         //artist
-        console.log(songData.artists[0].name);
+        console.log("Artist: " + songData.artists[0].name);
         //song name
-        console.log(songData.name);
+        console.log("Song: " + songData.name);
         //spotify preview link
-        console.log(songData.preview_url);
+        console.log("Preview URL: " + songData.preview_url);
         //album name
-        console.log(songData.album.name);
+        console.log("Album: " + songData.album.name);
         console.log("-----------------------");
         
         //adds text to log.txt
