@@ -48,6 +48,15 @@ Created during Week 10 of Rutgers Coding Bootcamp. The challenge was to use Node
 
   * Takes the text from random.txt and runs the song through spotify-this-song command
 
+## Tech used
+- Node.js
+- npm twitter
+- npm spotify
+- npm request
+
+## Prerequisites
+- See package.json
+
 ## Built With
 
 * Sublime Text - Text Editor
