@@ -11,7 +11,13 @@ Created during Week 10 of Rutgers Coding Bootcamp. The challenge was to use Node
 
   * `do-what-it-says`
 
-##What Each Command Does
+## Getting Started
+
+- Clone down repo.
+- Run command 'npm install' in Terminal or GitBash
+- Run command 'node liri.js' or one of the commands below.
+
+## What Each Command Does
 
 1. `node liri.js my-tweets`
 
@@ -50,12 +56,9 @@ Created during Week 10 of Rutgers Coding Bootcamp. The challenge was to use Node
 
 ## Tech used
 - Node.js
-- npm twitter
-- npm spotify
-- npm request
-
-## Prerequisites
-- See package.json
+- Twitter NPM Package - https://www.npmjs.com/package/twitter
+- Spotify NPM Package - https://www.npmjs.com/package/spotify
+- Request NPM Package - https://www.npmjs.com/package/request
 
 ## Built With
 
