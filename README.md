@@ -60,6 +60,11 @@ Created during Week 10 of Rutgers Coding Bootcamp. The challenge was to use Node
 - Spotify NPM Package - https://www.npmjs.com/package/spotify
 - Request NPM Package - https://www.npmjs.com/package/request
 
+## Prerequisites
+```
+- Node.js - Download the latest version of Node https://nodejs.org/en/
+```
+
 ## Built With
 
 * Sublime Text - Text Editor
