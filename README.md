@@ -32,7 +32,7 @@ Created during Week 10 of Rutgers Coding Bootcamp. The challenge was to use Node
     * The album that the song is from
 
   * Or if no song is passed through, it will default to
-    *"Florescent Adolescent" by Arctic Monkeys
+    *"Florescent Adolescent" by Ace of Base
 
 3. `node liri.js movie-this <movie name>`
 
@@ -60,15 +60,6 @@ Created during Week 10 of Rutgers Coding Bootcamp. The challenge was to use Node
 - Spotify NPM Package - https://www.npmjs.com/package/spotify
 - Request NPM Package - https://www.npmjs.com/package/request
 
-## Prerequisites
-```
-- Node.js - Download the latest version of Node https://nodejs.org/en/
-```
-
-## Built With
-
-* Sublime Text - Text Editor
-
 ## Authors
 
-* **Stefanie Ding** - *Node JS* - [Stefanie Ding](https://github.com/StefanieDing)
+* **Purvam Chokshi** - *Node JS* - [Purvam Chokshi](https://github.com/purvam98)
